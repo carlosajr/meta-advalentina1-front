@@ -10,7 +10,7 @@ export function Aside() {
       <img src={illustrationImg} alt="Ilustração Simbolizando Perguntas e Respostas" />
       <strong>Sua contribuição tem muito valor!</strong>
       <p>Adequação das estruturas físicas da Congregação em Valentina 1</p>
-      <Link to="/saiba-mais"><button>Saiba mais</button></Link>
+      <Link to="/saiba-mais"><button>Conheça o Projeto</button></Link>
     </aside>
   )
 }

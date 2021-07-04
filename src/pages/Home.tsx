@@ -25,7 +25,7 @@ export function Home() {
       <Aside />
       <main>
         <div className="main-content vertical-center">
-          <img src={logoImg} alt="Letmeask" />
+          <img src={logoImg} alt="AD VALENTINA 1" />
           <h3>Total Arrecadado: <strong>R$ {arrecadado}</strong></h3>
           <PieChart width={350} height={150}>
             <Pie

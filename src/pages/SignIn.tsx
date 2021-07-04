@@ -39,7 +39,7 @@ export function SignIn() {
       <Aside />
       <main>
         <div className="main-content vertical-center">
-          <img src={logoImg} alt="Letmeask" />
+          <img src={logoImg} alt="AD VALENTINA 1" />
           <button onClick={handleCreateRoom} className="login">
             <img src={googleIcon} alt="Icone Google" />
             Fazer Login com o Google
