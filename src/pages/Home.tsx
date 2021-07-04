@@ -2,24 +2,38 @@ import { Link } from 'react-router-dom';
 import { PieChart, Pie, Cell } from 'recharts';
 
 import { Aside } from '../components/Aside';
+import { useOfertas } from '../hooks/pegarOfertantes';
 
 import logoImg from '../assets/images/logo.png';
 import lock from '../assets/images/lock.png';
 
 import '../styles/home.scss';
 
-const total = 20000;
-const arrecadado = 15500;
-const restante = total - arrecadado;
-
-const data = [
-  { name: 'Valor Arrecadado', value: arrecadado },
-  { name: 'Total', value: restante },
-];
-
 const COLORS = ['#0088FE', '#cecece'];
 
 export function Home() {
+
+  const ofertasReg = useOfertas();
+
+  const aSoma = ofertasReg.questions.map(value => {
+    return value.oferta;
+  });
+
+  let tot: number = 0;
+
+  for (let val of aSoma) {
+    tot = tot + parseInt(val);
+  }
+
+  const total = 20000;
+  const arrecadado = tot;
+  const restante = total - arrecadado;
+
+  const data = [
+    { name: 'Valor Arrecadado', value: arrecadado },
+    { name: 'Total', value: restante },
+  ];
+
   return (
     <div id="page-auth">
       <Aside />
