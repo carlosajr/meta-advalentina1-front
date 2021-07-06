@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { isCallLikeExpression } from "typescript";
 import { database } from "../services/firebase";
 
 type ofertasType = {

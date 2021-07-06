@@ -3,6 +3,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import { firebase, auth } from './services/firebase';
 
+import { useAuth } from './hooks/pegarAutorizados';
+
 import { Home } from "./pages/Home";
 import { SignIn } from "./pages/SignIn";
 import { KnowMore } from "./pages/KnowMore";
@@ -22,9 +24,9 @@ type AuthContextType = {
 export const AuthContext = createContext({} as AuthContextType);
 
 function App() {
-  const emailsAutorizados = [
-    "carlosandreajr@gmail.com"
-  ];
+
+  const authDB = useAuth();
+  const emailsAutorizados = authDB.auth.autorizados;
 
   const [user, setUser] = useState<User>();
 

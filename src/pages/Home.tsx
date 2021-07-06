@@ -3,6 +3,7 @@ import { PieChart, Pie, Cell } from 'recharts';
 
 import { Aside } from '../components/Aside';
 import { useOfertas } from '../hooks/pegarOfertantes';
+import { useProjeto } from '../hooks/pegarProjeto';
 
 import logoImg from '../assets/images/logo.png';
 import lock from '../assets/images/lock.png';
@@ -14,18 +15,19 @@ const COLORS = ['#0088FE', '#cecece'];
 export function Home() {
 
   const ofertasReg = useOfertas();
+  const projeto = useProjeto();
+  console.log(projeto.projeto?.valorTotal);
 
   const aSoma = ofertasReg.questions.map(value => {
     return value.oferta;
   });
 
   let tot: number = 0;
-
   for (let val of aSoma) {
-    tot = tot + parseInt(val);
+    tot = tot + parseFloat(val);
   }
 
-  const total = 20000;
+  const total: number = projeto.projeto?.valorTotal;
   const arrecadado = tot;
   const restante = total - arrecadado;
 
